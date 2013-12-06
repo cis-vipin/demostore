@@ -7,36 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <div class="container">
-
-
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="#">Some Store</a>
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li><%= link_to "Browse Products", products_path %></li>
-          <li><%= link_to "Price List" %></li>
-          <li><%= link_to "Contact Us" %></li>
-          <li><%= link_to "What is new" %></li>
-          <li><%= link_to "Cart" %></li>
-      </ul>
-     
-      </div>
-    </div>
+  <div class="header">
+    <%= render "shared/header" %>
   </div>
+<!-- header end - -->
+<div class="main-container"
+    <%= yield %>
 </div>
 
-
-  <%= yield %>
+<div class="footer">
+  <%= render "shared/footer" %>
 </div>
-
 </body>
 </html>

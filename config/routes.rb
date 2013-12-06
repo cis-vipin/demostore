@@ -1,8 +1,10 @@
 Demostore::Application.routes.draw do
+  devise_for :admins
+
   get "welcome/index"
 
   devise_for :users
-
+  devise_for :admins
   resources :products
   root to: "welcome#index"
 

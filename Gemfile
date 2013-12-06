@@ -8,7 +8,8 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'execjs'
 gem 'devise'
-gem "paperclip", "~> 3.1"
+gem 'carrierwave'
+#gem "paperclip", "~> 3.1"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -22,6 +23,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "mini_magick", "~> 3.7.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
