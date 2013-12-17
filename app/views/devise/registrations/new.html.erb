@@ -1,0 +1,61 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name,:html => {:class => 'form-inline'}, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">
+      <%= f.label :email %>
+    </label>  
+    <div class="col-sm-10">
+      <%= f.email_field :email, :autofocus => true, :class => 'class="form-control"' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">
+      <%= f.label :password  %>
+    </label>  
+    <div class="col-sm-10">
+      <%= f.password_field :password ,:class=>"form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">
+      <%= f.label :password_confirmation %>
+    </label>
+     <div class="col-sm-10">
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :image %>
+    <div class="controls">
+      <%= f.file_field :image, :class => 'btn' %> <%#= image_tag @user.product_image.url(:thumb) %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :phone %>
+    <div class="controls">
+      <%= f.text_field :phone %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :address %>
+    <div class="controls">
+      <%= f.text_area :address %>
+    </div>
+  </div>
+
+  
+
+  
+  
+  <div><%= f.submit "Sign up" , :class=>'btn btn-primary' %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
