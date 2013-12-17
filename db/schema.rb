@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131206140035) do
+ActiveRecord::Schema.define(:version => 20131217111942) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(:version => 20131206140035) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
+  create_table "images", :force => true do |t|
+    t.string   "name"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "products", :force => true do |t|
     t.string   "name"
     t.decimal  "price",         :precision => 10, :scale => 0
@@ -38,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20131206140035) do
     t.datetime "updated_at",                                   :null => false
     t.string   "product_image"
     t.string   "image"
+    t.string   "description"
+    t.integer  "stock"
   end
 
   create_table "users", :force => true do |t|
@@ -53,6 +63,9 @@ ActiveRecord::Schema.define(:version => 20131206140035) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "address"
+    t.integer  "phone"
+    t.string   "image"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
