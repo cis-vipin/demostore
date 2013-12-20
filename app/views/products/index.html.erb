@@ -2,12 +2,13 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<div class="row-fluid">
+<div class="row">
 <% @products.each do |product| %>
-<div class="span3">
-<h2><%= product.name %></h2>
-  <p><%= image_tag product.image.url(:ios_profile) %> </p>
-  <p><a class="btn" href="#">View details »</a></p>
+ <% product.images.each do |image| %>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+  	<%= image_tag image.name_url(:ios_profile)%></a>
 </div><!--/span-->
+<%end %>
 <% end %>          
-</div> 
+</div>
