@@ -3,6 +3,9 @@ class Product < ActiveRecord::Base
   
   has_many :images , :as=>:imageable
   #mount_uploader :image, ImageUploader
+
+
+
   accepts_nested_attributes_for :images
   # set image path
   

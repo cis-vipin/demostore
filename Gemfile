@@ -39,3 +39,8 @@ gem "mini_magick", "~> 3.7.0"
 
 # To use debugger
  gem 'debugger'
+ group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'factory_girl'
+  gem 'capybara'
+end

@@ -4,11 +4,18 @@
 </div>
 <div class="row">
 <% @products.each do |product| %>
- <% product.images.each do |image| %>
-<div class="col-xs-6 col-md-3">
-  <a href="#" class="thumbnail">
-  	<%= image_tag image.name_url(:ios_profile)%></a>
-</div><!--/span-->
-<%end %>
+
+<div style="float:left;width:300px">
+ <h5><%= product.name %></h5> 
+ <p><%= image_tag product.images.first.image.url(:thumb) unless product.images.blank?  %> </p>
+ <%# product.images.each do |image| %>
+	<!-- <div class="span3">
+	<h2></h2>
+	  <p><%#= image_tag image.image.url(:thumb) %> </p>
+	  <p><a class="btn" href="#">View details »</a></p>
+	</div><!--/span--> 
+ <%# end %>	
+ </div>
+
 <% end %>          
 </div>

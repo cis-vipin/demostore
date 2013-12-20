@@ -38,4 +38,14 @@ Demostore::Application.configure do
   # device gem setting
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :user_name            => 'cisintest1@gmail.com',
+      :password             => 'cisdownload',
+      :authentication       => "plain",
+      :enable_starttls_auto => true,
+      :openssl_verify_mode  => 'none'
+    }
 end
