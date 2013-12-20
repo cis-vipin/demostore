@@ -4,7 +4,10 @@
 </div>
 <div class="row">
 <% @products.each do |product| %>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 <div style="float:left;width:300px">
  <h5><%= product.name %></h5> 
  <p><%= image_tag product.images.first.image.url(:thumb) unless product.images.blank?  %> </p>
@@ -16,6 +19,9 @@
 	</div><!--/span--> 
  <%# end %>	
  </div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 <% end %>          
 </div>

@@ -12,7 +12,9 @@
 # It's strongly recommended to check this file into your version control system.
 
 
+
 ActiveRecord::Schema.define(:version => 20131217111942) do
+
 
 
 
@@ -37,7 +39,6 @@ ActiveRecord::Schema.define(:version => 20131217111942) do
   create_table "images", :force => true do |t|
 
     t.string   "image"
-
     t.integer  "imageable_id"
     t.string   "imageable_type"
     t.datetime "created_at",     :null => false
@@ -71,13 +72,12 @@ ActiveRecord::Schema.define(:version => 20131217111942) do
     t.string   "address"
     t.integer  "phone"
     t.string   "image"
-<<<<<<< Updated upstream
-=======
+
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
->>>>>>> Stashed changes
+
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

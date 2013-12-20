@@ -11,6 +11,7 @@
  *= require_self
  *= require_tree .
  */
+<<<<<<< Updated upstream
 
  /*!
  * Bootstrap v3.0.3 (http://getbootstrap.com)
@@ -24,3 +25,8 @@
 	display: block !important;
 }
 
+=======
+.disBlock{
+	display: block !important;
+}
+>>>>>>> Stashed changes
