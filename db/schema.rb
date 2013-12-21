@@ -11,12 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-
-ActiveRecord::Schema.define(:version => 20131217111942) do
-
-
-
+ActiveRecord::Schema.define(:version => 20131218100735) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -37,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20131217111942) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "images", :force => true do |t|
-
     t.string   "image"
     t.integer  "imageable_id"
     t.string   "imageable_type"
@@ -72,12 +66,10 @@ ActiveRecord::Schema.define(:version => 20131217111942) do
     t.string   "address"
     t.integer  "phone"
     t.string   "image"
-
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
