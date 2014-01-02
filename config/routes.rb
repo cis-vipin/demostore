@@ -1,4 +1,7 @@
 Demostore::Application.routes.draw do
+  resources :categories
+
+
   devise_for :admins
   scope "(:locale)", :locale => /en|de/ do
   get "welcome/index"
