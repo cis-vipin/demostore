@@ -1,4 +1,14 @@
 <%= form_for @product, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
+
+  <% if  @product.errors.any? %>
+  <ul>
+  <%  @product.errors.full_messages.each do |msg| %>
+    <li>
+     <%= msg %>
+    </li> 
+  <% end %>
+  </ul>
+<% end %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">

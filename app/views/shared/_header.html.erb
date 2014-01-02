@@ -6,11 +6,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">Demo Store</a>
+      <a class="brand" href="#"><%= t('headers.demo_store') %></a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li><%= link_to "Browse Products", products_path %></li>
-          <li><%= link_to t('.new', :default => t("helpers.links.new")),
+          <li><%= link_to t('headers.browse_products'), products_path %></li>
+          <li><%#= link_to t('.new', :default => t("helpers.links.new")),
             new_product_path %>
         </li>
           <li>&nbsp;</li>
@@ -22,14 +22,34 @@
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> <li>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
           <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
+            
+            <li><%= link_to  t('headers.sign_up'), new_user_registration_path, :class => 'navbar-link'  %> 
             </li>  
-            <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+            <li><%= link_to t('headers.login'), new_user_session_path, :class => 'navbar-link'  %></li>
+
         <% end %>
       </li>
+
+
+<li class="dropdown">
+    <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html"><%=  I18n.locale == :en ? "English": "Deutsch" %><b class="caret"></b> </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <li><%= link_to  "English", locale: :en %></li>
+        <li><%= link_to  "Deutsch", locale: :de %></li>
+    </ul>
+</li>
+
       </ul>
      
       </div>
     </div>
   </div>
 </div>
+<script>
+$(document).ready(function(){
+  $("#language").change(function(){
+    alert($(this).val())
+    window.location=   "#{locale: :en}"  
+  })
+})
+</script>

@@ -24,6 +24,7 @@ end
 
 gem 'jquery-rails'
 gem "mini_magick", "~> 3.7.0"
+gem 'capistrano', '~> 3.0.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -42,5 +43,6 @@ gem "mini_magick", "~> 3.7.0"
  group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl'
-  gem 'capybara'
+  gem 'cucumber-rails', :require => false
+  gem 'capybara', :git => 'https://github.com/jnicklas/capybara.git'
 end

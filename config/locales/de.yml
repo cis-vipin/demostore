@@ -1,0 +1,13 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+de: 
+  Welcome_index: "willkommen Index"
+  description: "Vind me in app/views/welcome/index.html.erb"
+  welcome_to_this_webshop: "Welkom in deze webshop"
+  example_webshop: "Voorbeeld webshop"
+  headers: 
+    demo_store: "Demo winkel"
+    browse_products: "Blader producten"
+    sign_up: "zingen up"
+    login: "inloggen"
