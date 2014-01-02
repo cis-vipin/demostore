@@ -1,36 +1,31 @@
-<%- model_class = Product -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
+<div class="jumbotron">
+  <div class="row">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @product.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
-  <dd><%= @product.price %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <dd><%#= debugger %><%#= image_tag @product.images.url(:thumb) %></dd>
-</dl>
- <% @product.images.each do |image| %>
-
-    <div class="painting">
-      <%#= image_tag image1.image_url(:thumb).to_s %>
-      <div class="name"><%=  image_tag image.image_url(:thumb) %></div>
-      <div class="actions">
-        <%#= link_to "edit", edit_painting_path(painting) %> |
-        <%#= link_to "remove", painting, :confirm => 'Are you sure?', :method => :delete %>
-      </div>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% @product.images.each_with_index do |image , index| %>
+    <div class="item <%= index==1 ? 'active' : '' %>">
+        <div class="col-sm-6 col-md-4">
+         <div class="thumbnail">
+      <%=  image_tag image.image_url(:ios_profile) %>
+    </div></div>
     </div>
-  <% end %>
-
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              products_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_product_path(@product), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              product_path(@product),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+   <% end %>
+  </div>
 </div>
+</div>
+<p><%=@product.description%>></p>
+</div>
+
+<script type="text/javascript">
+$('.carousel').carousel({
+  interval: 4000
+})
+</script>
