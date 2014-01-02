@@ -1,50 +1,46 @@
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="#"><%= t('headers.demo_store') %></a>
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li><%= link_to t('headers.browse_products'), products_path %></li>
-          <li><%#= link_to t('.new', :default => t("helpers.links.new")),
-            new_product_path %>
-        </li>
-          <li>&nbsp;</li>
-          <li>&nbsp;</li>
-          <li>&nbsp;</li>
-          <% if user_signed_in? %>
-          <li>Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> <li>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-          <% else %>
-            
-            <li><%= link_to  t('headers.sign_up'), new_user_registration_path, :class => 'navbar-link'  %> 
-            </li>  
-            <li><%= link_to t('headers.login'), new_user_session_path, :class => 'navbar-link'  %></li>
-
-        <% end %>
-      </li>
-
-
-<li class="dropdown">
-    <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html"><%=  I18n.locale == :en ? "English": "Deutsch" %><b class="caret"></b> </a>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-        <li><%= link_to  "English", locale: :en %></li>
-        <li><%= link_to  "Deutsch", locale: :de %></li>
-    </ul>
-</li>
-
-      </ul>
-     
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a href="http://www.tutorialrepublic.com" target="_blank" class="brand"><%= t('headers.demo_store') %></a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#" target="_blank">Home</a></li>
+              <li><a href="#" target="_blank">About</a></li>
+              <li><a href="#" target="_blank">Contact</a></li>
+               <% if user_signed_in? %>
+                <li>Logged in as <strong><%= current_user.email %></strong>.
+                  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+                </li>
+                <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> <li>
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                </li>
+              <% else %>
+              <li>
+                <%= link_to  t('headers.sign_up'), new_user_registration_path, :class => 'navbar-link'  %> 
+              </li>  
+              <li>
+                <%= link_to t('headers.login'), new_user_session_path, :class => 'navbar-link'  %>
+              </li>
+            <% end %>
+              <li class="dropdown">
+                <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                  <%=  I18n.locale == :en ? "English": "Deutsch" %><b class="caret"></b>
+                </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <li><%= link_to  "English", locale: :en %></li>
+                  <li><%= link_to  "Deutsch", locale: :de %></li>
+            </ul>
+          </li>
+          </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 <script>
 $(document).ready(function(){
   $("#language").change(function(){
@@ -52,4 +48,9 @@ $(document).ready(function(){
     window.location=   "#{locale: :en}"  
   })
 })
+
+$('.carousel').carousel({
+      interval: 2000
+})
+
 </script>
