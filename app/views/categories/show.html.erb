@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-
+<%= @category.name %>
+<%=  image_tag @category.image.image_url(:small_icon), :class => "img-responsive" if @category.image.image? %>
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

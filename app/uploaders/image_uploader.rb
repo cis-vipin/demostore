@@ -38,6 +38,18 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :ios_profile do
     process :resize_to_fill => [150, 150]
   end
+
+  version :profile do
+    process :resize_to_fill => [171, 180]
+  end
+
+  version :small_icon do
+    process :resize_to_fill => [25, 25]
+  end
+
+  version :dropdown_icon do
+    process :resize_to_fill => [15, 15]
+  end
   
   version :medium do
     process :resize_to_fill => [250, 250]

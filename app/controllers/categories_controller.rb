@@ -14,18 +14,20 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @category }
     end
+    rescue
+      flash[:notice] = "Category not found."
+      redirect_to(:action => 'index')
   end
 
   # GET /categories/new
   # GET /categories/new.json
   def new
     @category = Category.new
-
+    @category.build_image 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @category }
