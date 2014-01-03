@@ -1,25 +1,16 @@
-<div class="jumbotron">
-  <div class="row">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
+<div class="container">
+<div class="hero-unit">
+<a href="#" class="img-thumbnail">
+    <%= image_tag @product.images.first.image.url(:ios_profile) unless @product.images.blank?  %>
+</a>
+<p>&nbsp;</p>
+<p><strong><%=@product.name%></strong></p>
+<p>&nbsp;</p>
+<p><strong><%=@product.price%></strong></p>
+<p>&nbsp;</p>     
+<p><button type="button" class="btn btn-primary">Add to Bag</button></p>     
+</div>
+</div>      
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <% @product.images.each_with_index do |image , index| %>
-    <div class="item <%= index==1 ? 'active' : '' %>">
-        <div class="col-sm-6 col-md-4">
-         <div class="thumbnail">
-      <%=  image_tag image.image_url(:ios_profile) :class => "img-responsive" %>
-    </div></div>
-    </div>
-   <% end %>
-  </div>
-</div>
-</div>
-<p><%=@product.description%>></p>
-</div>
+      
+
