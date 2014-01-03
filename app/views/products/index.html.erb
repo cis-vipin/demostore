@@ -1,14 +1,11 @@
-<%- model_class = Product -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<div class="row">
+<div class="hero-unit">
 <% @products.each do |product| %>
-
-<div style="float:left;width:300px">
- <h5><%= product.name %></h5> 
- <p><%= image_tag product.images.first.image.url(:thumb) unless product.images.blank?  %> </p>
- </div>
-
+	<div class="row">
+        <div class="col-xs-6 col-md-3">
+          <a href="#" class="thumbnail img-responsive">
+			<%= image_tag product.images.first.image.url(:ios_profile) unless product.images.blank?  %>
+		  </a>
+		</div>
+	</div>	  	
 <% end %>          
 </div>
