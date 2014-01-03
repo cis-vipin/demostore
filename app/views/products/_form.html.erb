@@ -1,3 +1,5 @@
+<div class="container">
+<div class="hero-unit">
 <%= form_for @product, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
 
   <% if  @product.errors.any? %>
@@ -40,7 +42,7 @@
 
   <div class="control-group">
     <%= f.label :feature, :class => 'control-label' %>
-    <div class="controls">
+    <div class="controls checkbox">
       <%= f.check_box :feature %>
     </div>
   </div>
@@ -48,9 +50,6 @@
 
   <div id="blockBrowseImage" class="control-group">
     <div class="controls">
-      <%#=f.fields_for :images do |attachment_f|%>
-        <%#= attachment_f.file_field :image%>
-      <%#end%><%#= image_tag @product.product_image.url(:thumb) %>
       <%= file_field_tag "product[images_attributes][][image]" %>
     </div>
   </div>
@@ -69,17 +68,11 @@
     </div>
   </div>
 
-  <div class="control-group">
-
-
-    
-
+  
   <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-
-
-      <%= f.text_area :description, :class => '' %> 
+      <%= f.text_area :description, :class => 'input-block-level' %> 
     </div>
   </div>
 
@@ -89,3 +82,6 @@
                 products_path, :class => 'btn' %>
   </div>
 <% end %>
+
+</div>
+</div>

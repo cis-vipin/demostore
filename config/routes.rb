@@ -1,5 +1,5 @@
 Demostore::Application.routes.draw do
-  resources :categories
+  
 
 
   devise_for :admins
@@ -9,6 +9,7 @@ Demostore::Application.routes.draw do
   devise_for :users
   devise_for :admins
   resources :products
+  resources :categories
   root to: "welcome#index"
 
   # The priority is based upon order of creation:
