@@ -68,4 +68,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg gif png)
   end
+
+    def default_url
+    ActionController::Base.helpers.asset_path("uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}" + [version_name, "default.png"].compact.join('_'))
+  end
+
 end

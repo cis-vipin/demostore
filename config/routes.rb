@@ -6,11 +6,13 @@ Demostore::Application.routes.draw do
   scope "(:locale)", :locale => /en|de/ do
   get "welcome/index"
 
-  devise_for :users
+   devise_for :users, :controllers => {:sessions => "sessions"}
   devise_for :admins
   resources :products
   resources :categories
   root to: "welcome#index"
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

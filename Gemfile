@@ -25,7 +25,7 @@ end
 gem 'jquery-rails'
 gem "mini_magick", "~> 3.7.0"
 gem 'capistrano', '~> 3.0.1'
-
+gem 'client_side_validations'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
